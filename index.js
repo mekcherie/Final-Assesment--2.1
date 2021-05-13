@@ -18,9 +18,6 @@ function upperFirst(str) {
 }
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 function formatNumber(number) {
-    if (isEmpty(number) === true) {
-        return 'No phone number on file';
-    }
     var areaCode = number.slice(0, 3);
     var middle = number.slice(3, 6);
     var end = number.slice(6);
@@ -32,6 +29,7 @@ function printData() {
     var purchaseDate = new Date(data[0].purchased);
     console.log("Purchased: " + months[purchaseDate.getMonth()] + " " + purchaseDate.getDate() + ", " + purchaseDate.getFullYear());
     console.log("Phone: " + formatNumber(data[0].phone));
+    console.log("City: " + upperFirst(data[5].city));
 }
 printData();
 module.exports = { formatNumber: formatNumber };

@@ -7,7 +7,3 @@ test('formatNumber 1', () => {
 test('formatNumber 2', () => {
   expect(index.formatNumber('1234567890')).toBe(('(123) 456-7890'))
 })
-
-test('formatNumber 3', () => {
-  expect(index.formatNumber('')).toBe(('No phone number on file'))
-})

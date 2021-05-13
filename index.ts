@@ -20,9 +20,6 @@ function upperFirst(str: string): string {
 }
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 function formatNumber(number: string): string {
-  if (isEmpty(number) === true) {
-    return 'No phone number on file';
-  }
   const areaCode: string = number.slice(0, 3);
   const middle: string = number.slice(3, 6);
   const end: string = number.slice(6);
@@ -37,6 +34,7 @@ function printData() {
   console.log(`Purchased: ${months[purchaseDate.getMonth()]} ${purchaseDate.getDate()}, ${purchaseDate.getFullYear()}`);
 
   console.log(`Phone: ${formatNumber(data[0].phone)}`);
+  console.log(`City: ${upperFirst(data[5].city)}`)
 }
 
 printData();
